@@ -12,7 +12,7 @@ import org.springframework.data.repository.query.Param;
 import gestionempleadosbackend.model.Estado;
 import gestionempleadosbackend.model.Pais;
 import gestionempleadosbackend.model.Persona;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
  
 public interface PersonaRepository extends JpaRepository<Persona, Integer> {
 

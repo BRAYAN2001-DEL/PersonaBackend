@@ -9,8 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
-import org.springframework.stereotype.Service;
+ import org.springframework.stereotype.Service;
 
 import gestionempleadosbackend.model.Cliente;
 import gestionempleadosbackend.repository.ClienteRepository;
@@ -71,11 +70,7 @@ public class ClienteService  implements ClienteRepository {
 		return null;
 	}
 
-	@Override
-	public Cliente getReferenceById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 	@Override
 	public <S extends Cliente> List<S> findAll(Example<S> example) {
@@ -197,11 +192,7 @@ public class ClienteService  implements ClienteRepository {
 		return false;
 	}
 
-	@Override
-	public <S extends Cliente, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 	@Override
 	public Cliente findClienteById(Integer id) {

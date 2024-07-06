@@ -9,8 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
-import org.springframework.stereotype.Service;
+ import org.springframework.stereotype.Service;
 
 import gestionempleadosbackend.model.Pais;
 import gestionempleadosbackend.repository.PaisRepository;
@@ -68,13 +67,7 @@ public class PaisService implements PaisRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public Pais getReferenceById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+ 
 	@Override
 	public <S extends Pais> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
@@ -195,11 +188,6 @@ public class PaisService implements PaisRepository{
 		return false;
 	}
 
-	@Override
-	public <S extends Pais, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	 
 
 }

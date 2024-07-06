@@ -9,8 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
-import org.springframework.stereotype.Service;
+ import org.springframework.stereotype.Service;
 
 import gestionempleadosbackend.model.Cuenta;
 import gestionempleadosbackend.model.Movimiento;
@@ -71,11 +70,7 @@ public class MovimientoService implements MovimientoRepository {
 		return null;
 	}
 
-	@Override
-	public Movimiento getReferenceById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 	@Override
 	public <S extends Movimiento> List<S> findAll(Example<S> example) {
@@ -197,11 +192,7 @@ public class MovimientoService implements MovimientoRepository {
 		return false;
 	}
 
-	@Override
-	public <S extends Movimiento, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 
  	@Override

@@ -9,7 +9,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
+ 
 import org.springframework.stereotype.Service;
 
 import gestionempleadosbackend.model.Cuenta;
@@ -72,11 +72,7 @@ public class CuentaService implements CuentaRepository  {
 		return null;
 	}
 
-	@Override
-	public Cuenta getReferenceById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 	@Override
 	public <S extends Cuenta> List<S> findAll(Example<S> example) {
@@ -199,11 +195,7 @@ public class CuentaService implements CuentaRepository  {
 		return false;
 	}
 
-	@Override
-	public <S extends Cuenta, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
 
 	
 	 	@Override
