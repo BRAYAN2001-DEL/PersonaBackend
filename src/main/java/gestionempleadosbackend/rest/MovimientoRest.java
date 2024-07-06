@@ -243,7 +243,7 @@ public class MovimientoRest {
         // Guardar el movimiento y actualizar la cuenta
         movimientoService.save(movimiento);
         cuentaService.save(cuenta);
-        responseMessage =  new  ResponseMessage("ok", "200");
+        responseMessage =  new  ResponseMessage("Movimiento Realizado con exito", "200");
         
         }catch(Exception e) {
    		 	throw new RuntimeException(e);

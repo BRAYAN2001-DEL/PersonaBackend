@@ -615,6 +615,42 @@
 					"response": []
 				},
 				{
+					"name": "movimientos realizar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"cuenta\": {\r\n            \"id\": 2\r\n        },\r\n        \"valor\": 100.0,\r\n        \"tipo_movimiento\":\"Deposito\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/movimientos/realizarMovimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movimientos",
+								"realizarMovimiento"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "cuenta update",
 					"request": {
 						"method": "PUT",
@@ -731,6 +767,44 @@
 							"path": [
 								"movimientos",
 								"byIdDelete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"item": [
+				{
+					"name": "reportes General",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/reportes?fechaInicio=2024-07-01&fechaFin=2024-07-08&idCliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2024-07-01"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2024-07-08"
+								},
+								{
+									"key": "idCliente",
+									"value": "1"
+								}
 							]
 						}
 					},

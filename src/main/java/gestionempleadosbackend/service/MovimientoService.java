@@ -1,5 +1,6 @@
 package gestionempleadosbackend.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -200,5 +201,17 @@ public class MovimientoService implements MovimientoRepository {
         return movimientoRepository.findMovimientoById(id);
     }
 
+	@Override
+	public List<Movimiento> findMovimientoReporteById(Date fechaInicio, Date fechaFin, int cuentaId) {
+		// TODO Auto-generated method stub
+		return movimientoRepository.findMovimientoReporteById(fechaInicio,fechaFin,cuentaId);
+	}
+
+	
+
+	
+ 	
+ 	
+	
 	
 }

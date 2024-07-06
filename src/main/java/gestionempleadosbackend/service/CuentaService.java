@@ -202,5 +202,13 @@ public class CuentaService implements CuentaRepository  {
 	    public Cuenta findCuentaById(Integer id) {
 	        return cuentaRepository.findCuentaById(id);
 	    }
+	 	
+	  
+
+		@Override
+		public List<Cuenta> findCuentaClienteById(Integer id) {
+			// TODO Auto-generated method stub
+			return cuentaRepository.findCuentaClienteById(id);
+		}
 	
 }
