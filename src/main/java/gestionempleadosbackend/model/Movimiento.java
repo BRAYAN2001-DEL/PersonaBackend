@@ -26,17 +26,20 @@ public class Movimiento {
 	private Double valor;
 	@Column (name = "saldo")
 	private Double saldo;
+	@Column (name = "tipo_movimiento")
+	private String tipo_movimiento;
 	
 	public Movimiento() {
 	}
 
-	public Movimiento(int id, Cuenta cuenta, Date fecha, Double valor, Double saldo) {
+	public Movimiento(int id, Cuenta cuenta, Date fecha, Double valor, Double saldo, String tipo_movimiento) {
 		super();
 		this.id = id;
 		this.cuenta = cuenta;
 		this.fecha = fecha;
 		this.valor = valor;
 		this.saldo = saldo;
+		this.tipo_movimiento = tipo_movimiento;
 	}
 
 	public int getId() {
@@ -78,7 +81,16 @@ public class Movimiento {
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
-	
+
+	public String getTipo_movimiento() {
+		return tipo_movimiento;
+	}
+
+	public void setTipo_movimiento(String tipo_movimiento) {
+		this.tipo_movimiento = tipo_movimiento;
+	}
+
+	 
 	
 	
 	

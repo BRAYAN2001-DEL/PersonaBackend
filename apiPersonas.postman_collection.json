@@ -75,6 +75,41 @@
 					"response": []
 				},
 				{
+					"name": "byIdPut Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Brayan Steeven\",\r\n    \"apellido\":\"Salmon\",\r\n    \"edad\":7,\r\n    \"genero\":\"Masculino\",\r\n    \"identificacion\":\"1207945724\",\r\n    \"direccion\":\"Via Simon Bolivqr\",\r\n    \"telefono\":\"0960803275\",\r\n    \"pais\":{\r\n        \"id\":1,\r\n        \"nombre\":\"Jujan\"\r\n     },\r\n    \"estado\":{\r\n        \"id\":1\r\n        \r\n     }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/personas/byIdPatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"personas",
+								"byIdPatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "persona findAll",
 					"request": {
 						"method": "GET",
@@ -267,6 +302,41 @@
 					"response": []
 				},
 				{
+					"name": "cuenta update Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"persona\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"como estas\",\r\n            \"apellido\": \"Salmon\",\r\n            \"edad\": 7,\r\n            \"pais\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Jujan\"\r\n            },\r\n            \"estado\": {\r\n                \"id\": 1,\r\n                \"pais\": {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"Jujan\"\r\n                },\r\n                \"nombre\": \"JUjan\"\r\n            },\r\n            \"genero\": \"Masculino\",\r\n            \"identificacion\": \"1207945724\",\r\n            \"direccion\": \"Via Simon Bolivqr\",\r\n            \"telefono\": \"0960803275\"\r\n        },\r\n        \"numero_cuenta\": \"2222\",\r\n        \"tipo_cuenta\": \"CUENTA DE AHORROS\",\r\n        \"saldo_Inicial\": 1000000.0,\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/cuentas/byIdPatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cuentas",
+								"byIdPatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "cuenta findId",
 					"request": {
 						"method": "GET",
@@ -406,6 +476,41 @@
 					"response": []
 				},
 				{
+					"name": "cliente update Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"persona\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"como estas\",\r\n            \"apellido\": \"Salmon\",\r\n            \"edad\": 7,\r\n            \"pais\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Jujan\"\r\n            },\r\n            \"estado\": {\r\n                \"id\": 1,\r\n                \"pais\": {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"Jujan\"\r\n                },\r\n                \"nombre\": \"JUjan\"\r\n            },\r\n            \"genero\": \"Masculino\",\r\n            \"identificacion\": \"1207945724\",\r\n            \"direccion\": \"Via Simon Bolivqr\",\r\n            \"telefono\": \"0960803275\"\r\n        },\r\n        \"contrasena\": \"123456\",\r\n        \"estado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/clientes/byIdPatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"byIdPatch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "cliente findId",
 					"request": {
 						"method": "GET",
@@ -539,6 +644,41 @@
 							"path": [
 								"movimientos",
 								"byIdPut"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta update Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "id",
+								"value": "52",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"cuenta\": {\r\n            \"id\": 1,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"persona\": {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"como estas\",\r\n                    \"apellido\": \"Salmon\",\r\n                    \"edad\": 7,\r\n                    \"pais\": {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Jujan\"\r\n                    },\r\n                    \"estado\": {\r\n                        \"id\": 1,\r\n                        \"pais\": {\r\n                            \"id\": 1,\r\n                            \"nombre\": \"Jujan\"\r\n                        },\r\n                        \"nombre\": \"JUjan\"\r\n                    },\r\n                    \"genero\": \"Masculino\",\r\n                    \"identificacion\": \"1207945724\",\r\n                    \"direccion\": \"Via Simon Bolivqr\",\r\n                    \"telefono\": \"0960803275\"\r\n                },\r\n                \"contrasena\": \"123\",\r\n                \"estado\": true\r\n            },\r\n            \"numero_cuenta\": \"2222\",\r\n            \"tipo_cuenta\": \"CUENTA DE AHORROS\",\r\n            \"saldo_Inicial\": 1000000.0,\r\n            \"estado\": true\r\n        },\r\n        \"fecha\": \"2024-07-06T05:00:00.000+00:00\",\r\n        \"valor\": 2000.0,\r\n        \"saldo\": 1000.0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/movimientos/byIdPatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movimientos",
+								"byIdPatch"
 							]
 						}
 					},

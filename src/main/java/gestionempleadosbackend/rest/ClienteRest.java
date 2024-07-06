@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -96,6 +97,35 @@ public class ClienteRest {
     }
     
     
+    @PatchMapping("/byIdPatch")
+    public ResponseEntity<Cliente> updateClientePatch(@RequestHeader("id") int id, @RequestBody Cliente cliente) {
+        try {
+            Cliente clienteActual = clienteService.findClienteById(id);
+            if (clienteActual == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            // Actualizar los campos de personaActual con los valores de la persona recibida
+            if (cliente.getPersona() != null) {
+            	clienteActual.setPersona(cliente.getPersona());
+            }
+            if (cliente.getEstado() != null) {
+            	clienteActual.setEstado(cliente.getEstado());
+            }
+            
+            if (cliente.getContrasena() != null) {
+            	clienteActual.setContrasena(cliente.getContrasena());
+            }
+            
+             
+            // Guardar la persona actualizada en la base de datos
+            Cliente clienteActualizada = clienteService.save(clienteActual);
+
+            return ResponseEntity.ok(clienteActualizada);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
     
     
     
