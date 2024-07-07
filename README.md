@@ -27,3 +27,15 @@ bin\windows\kafka-console-producer.bat --topic test-topic --bootstrap-server loc
 -4 para consumir los eventos:
 
 bin\windows\kafka-console-consumer.bat --topic test-topic --bootstrap-server localhost:9092 --from-beginning
+
+
+
+
+
+Instrucciones:
+Base de datos:
+1. La base de datos la contiene el archivo BaseDatos.sql contiene el backup crearla con el nombre: persona-db
+Documento Json:
+2. El archvio llamado  apiPersonas.postman_collection.json contiene la estructura y documentacion para las pruebas de los api
+Proyecto Java
+3. El proyecto java se encuentra estructurado mediante mvc para fortalecer el codigo limpio y los principios de programacion.
