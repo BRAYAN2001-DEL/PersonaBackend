@@ -38,7 +38,7 @@ public class ClienteRest {
 	@PostMapping 
     private ResponseEntity<Cliente> saveCliente(@RequestBody Cliente cliente){
     	try {
-    	Cliente clienteGuardada = clienteService.save(cliente);
+    	Cliente clienteGuardada = clienteService.saveValidate(cliente);
     	return ResponseEntity.created(new URI("/clientes/"+ clienteGuardada.getId())).body(clienteGuardada);
     	}catch(Exception e) {
     		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();	

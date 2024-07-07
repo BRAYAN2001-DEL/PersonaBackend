@@ -9,10 +9,10 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
- import org.springframework.stereotype.Service;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
 
-import gestionempleadosbackend.model.Estado;
-import gestionempleadosbackend.model.Pais;
+
 import gestionempleadosbackend.model.Persona;
 import gestionempleadosbackend.repository.PersonaRepository;
 
@@ -23,6 +23,10 @@ public class PersonaService  implements PersonaRepository {
 	@Autowired
 	private PersonaRepository personaRepository;
 
+	
+	@Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+	
 	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
@@ -106,6 +110,7 @@ public class PersonaService  implements PersonaRepository {
 	@Override
 	public <S extends Persona> S save(S entity) {
 		// TODO Auto-generated method stub
+        kafkaTemplate.send("test-topic", "Nueva persona creada: " + entity.getNombre());
 		return personaRepository.save(entity);
 	}
 

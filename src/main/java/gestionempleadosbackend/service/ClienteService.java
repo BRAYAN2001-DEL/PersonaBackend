@@ -9,7 +9,11 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
- import org.springframework.stereotype.Service;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import gestionempleadosbackend.model.Cliente;
 import gestionempleadosbackend.repository.ClienteRepository;
@@ -22,6 +26,9 @@ public class ClienteService  implements ClienteRepository {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
+	
+	@Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
@@ -105,8 +112,38 @@ public class ClienteService  implements ClienteRepository {
 	@Override
 	public <S extends Cliente> S save(S entity) {
 		// TODO Auto-generated method stub
-		return clienteRepository.save(entity);
+       // kafkaTemplate.send("test-topic", "Id del cliente creado: " + entity.getId());
+
+		 // Convertir el objeto Persona a JSON
+        String clienteJson = convertClienteToJson(entity);
+
+        // Enviar evento a Kafka
+        kafkaTemplate.send("test-topic", clienteJson);
+ 
+        
+        return  clienteRepository.save(entity);
 	}
+	
+	
+	
+	public Cliente saveValidate(Cliente cliente) {
+		Cliente savedPersona = clienteRepository.save(cliente);
+
+        // Crear el response
+       /* PersonaResponse response = new PersonaResponse();
+        response.setMessage("Persona creada con éxito");
+        response.setCode("201");
+        response.setId(savedPersona.getId());*/
+
+        // Convertir el response a JSON
+        String responseJson = convertClienteToJson(savedPersona);
+
+        // Enviar el evento a Kafka
+        kafkaTemplate.send("test-topic", responseJson);
+
+        return savedPersona;
+    }
+	
 
 	@Override
 	public Optional<Cliente> findById(Integer id) {
@@ -199,5 +236,16 @@ public class ClienteService  implements ClienteRepository {
 		// TODO Auto-generated method stub
 		return clienteRepository.findClienteById(id);
 	}
+	
+	
+	private String convertClienteToJson(Cliente cliente) {
+        // Utiliza una biblioteca como Jackson para convertir el objeto a JSON
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.writeValueAsString(cliente);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Error converting cliente to JSON", e);
+        }
+    }
 
 }
