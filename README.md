@@ -7,13 +7,13 @@ Nota:
 
 Para levantar el servicio kafka es:
 
---dentro de la carpeta de apache kstfa:
+--dentro de la carpeta de apache kafka:
 
 -1 levantar el server zookeeper
 bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 
 
---2 levantar el server kaftka
+--2 levantar el server kafka
 
 bin\windows\kafka-server-start.bat config\server.properties
 
