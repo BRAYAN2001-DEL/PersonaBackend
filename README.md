@@ -5,7 +5,7 @@ https://github.com/BRAYAN2001-DEL/CuentaBackend
 
 Nota:
 
-Para levantar el servicio kafka es:
+Para levantar el servicio kafka y zookeeper  es:
 
 --dentro de la carpeta de apache kafka:
 
